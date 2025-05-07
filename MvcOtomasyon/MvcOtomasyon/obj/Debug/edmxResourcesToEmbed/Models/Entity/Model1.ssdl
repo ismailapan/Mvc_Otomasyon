@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SatisVTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TBLHARCAMA">
+    <Key>
+      <PropertyRef Name="HARCAMAID" />
+    </Key>
+    <Property Name="HARCAMAID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUSTERIID" Type="int" Nullable="false" />
+    <Property Name="HARCAMATUTAR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="HARCAMATARIH" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="TBLHAREKET">
+    <Key>
+      <PropertyRef Name="HAREKETID" />
+    </Key>
+    <Property Name="HAREKETID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUN" Type="int" />
+    <Property Name="MUSTERI" Type="int" />
+    <Property Name="PERSONEL" Type="smallint" />
+    <Property Name="ADET" Type="int" />
+    <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TARIH" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'SatisVT.dbo.TBLKASA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLKASA">
+          <Property Name="TOPLAM" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>-->
+  <EntityType Name="TBLKATEGORI">
+    <Key>
+      <PropertyRef Name="KATEGORIID" />
+    </Key>
+    <Property Name="KATEGORIID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KATEGORIAD" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLMUSTERI">
+    <Key>
+      <PropertyRef Name="MUSTERIID" />
+    </Key>
+    <Property Name="MUSTERIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUSTERIAD" Type="varchar" MaxLength="50" />
+    <Property Name="MUSTERSOYAD" Type="varchar" MaxLength="50" />
+    <Property Name="MUSTERISEHIR" Type="varchar" MaxLength="13" />
+    <Property Name="MUSTERIBAKIYE" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="TBLPERSONEL">
+    <Key>
+      <PropertyRef Name="PERSONELID" />
+    </Key>
+    <Property Name="PERSONELID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PERSONELADSOYAD" Type="varchar" MaxLength="50" />
+    <Property Name="PERSONELMAAS" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'SatisVT.dbo.TBLSAYAC' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLSAYAC">
+          <Property Name="ISLEM" Type="int" />
+        </EntityType>-->
+  <EntityType Name="TBLSEHIRLER">
+    <Key>
+      <PropertyRef Name="PLAKA" />
+    </Key>
+    <Property Name="PLAKA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SEHIRAD" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'SatisVT.dbo.TBLTOPLAMKATEGORI' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TBLTOPLAMKATEGORI">
+          <Property Name="KADET" Type="tinyint" />
+        </EntityType>-->
+  <EntityType Name="TBLURUNLER">
+    <Key>
+      <PropertyRef Name="URUNID" />
+    </Key>
+    <Property Name="URUNID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUNAD" Type="varchar" MaxLength="50" />
+    <Property Name="URUNMARKA" Type="varchar" MaxLength="50" />
+    <Property Name="KATEGORI" Type="tinyint" />
+    <Property Name="URUNALISFIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="URUNSATISFIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="URUNSTOK" Type="smallint" />
+    <Property Name="URUNDURUM" Type="bit" />
+  </EntityType>
+  <Association Name="FK__TBLHARCAM__MUSTE__18EBB532">
+    <End Role="TBLMUSTERI" Type="Self.TBLMUSTERI" Multiplicity="1" />
+    <End Role="TBLHARCAMA" Type="Self.TBLHARCAMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMUSTERI">
+        <PropertyRef Name="MUSTERIID" />
+      </Principal>
+      <Dependent Role="TBLHARCAMA">
+        <PropertyRef Name="MUSTERIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLHAREKET_TBLMUSTERI">
+    <End Role="TBLMUSTERI" Type="Self.TBLMUSTERI" Multiplicity="0..1" />
+    <End Role="TBLHAREKET" Type="Self.TBLHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMUSTERI">
+        <PropertyRef Name="MUSTERIID" />
+      </Principal>
+      <Dependent Role="TBLHAREKET">
+        <PropertyRef Name="MUSTERI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLHAREKET_TBLPERSONEL">
+    <End Role="TBLPERSONEL" Type="Self.TBLPERSONEL" Multiplicity="0..1" />
+    <End Role="TBLHAREKET" Type="Self.TBLHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLPERSONEL">
+        <PropertyRef Name="PERSONELID" />
+      </Principal>
+      <Dependent Role="TBLHAREKET">
+        <PropertyRef Name="PERSONEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLHAREKET_TBLURUNLER">
+    <End Role="TBLURUNLER" Type="Self.TBLURUNLER" Multiplicity="0..1" />
+    <End Role="TBLHAREKET" Type="Self.TBLHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLURUNLER">
+        <PropertyRef Name="URUNID" />
+      </Principal>
+      <Dependent Role="TBLHAREKET">
+        <PropertyRef Name="URUN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLURUNLER_TBLKATEGORI">
+    <End Role="TBLKATEGORI" Type="Self.TBLKATEGORI" Multiplicity="0..1" />
+    <End Role="TBLURUNLER" Type="Self.TBLURUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLKATEGORI">
+        <PropertyRef Name="KATEGORIID" />
+      </Principal>
+      <Dependent Role="TBLURUNLER">
+        <PropertyRef Name="KATEGORI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SatisVTModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLHARCAMA" EntityType="Self.TBLHARCAMA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLHAREKET" EntityType="Self.TBLHAREKET" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLKATEGORI" EntityType="Self.TBLKATEGORI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLMUSTERI" EntityType="Self.TBLMUSTERI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPERSONEL" EntityType="Self.TBLPERSONEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLSEHIRLER" EntityType="Self.TBLSEHIRLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLURUNLER" EntityType="Self.TBLURUNLER" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__TBLHARCAM__MUSTE__18EBB532" Association="Self.FK__TBLHARCAM__MUSTE__18EBB532">
+      <End Role="TBLMUSTERI" EntitySet="TBLMUSTERI" />
+      <End Role="TBLHARCAMA" EntitySet="TBLHARCAMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLHAREKET_TBLMUSTERI" Association="Self.FK_TBLHAREKET_TBLMUSTERI">
+      <End Role="TBLMUSTERI" EntitySet="TBLMUSTERI" />
+      <End Role="TBLHAREKET" EntitySet="TBLHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLHAREKET_TBLPERSONEL" Association="Self.FK_TBLHAREKET_TBLPERSONEL">
+      <End Role="TBLPERSONEL" EntitySet="TBLPERSONEL" />
+      <End Role="TBLHAREKET" EntitySet="TBLHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLHAREKET_TBLURUNLER" Association="Self.FK_TBLHAREKET_TBLURUNLER">
+      <End Role="TBLURUNLER" EntitySet="TBLURUNLER" />
+      <End Role="TBLHAREKET" EntitySet="TBLHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLURUNLER_TBLKATEGORI" Association="Self.FK_TBLURUNLER_TBLKATEGORI">
+      <End Role="TBLKATEGORI" EntitySet="TBLKATEGORI" />
+      <End Role="TBLURUNLER" EntitySet="TBLURUNLER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

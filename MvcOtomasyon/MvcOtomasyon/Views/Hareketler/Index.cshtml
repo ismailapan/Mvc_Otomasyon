@@ -1,0 +1,45 @@
+﻿@model MvcOtomasyon.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Satış Yap
+</button>
+<div class="modal" id="Modal1">
+    <div class=" modal-dialog">
+        <div class=" modal-content">
+            <div class=" modal-header">
+                <h2 class=" modal-title">Satış Yapma Ekranı</h2>
+
+            </div>
+            <form method="post" action="/Hareketler/YeniSatis">
+                <div class="modal-body">
+                    <label>
+                        ÜRÜN ADI
+                    </label>
+                    @Html.TextBoxFor(m => m.URUN, new { @class = "form-control", @style = "text-transform:uppercase" })
+                    <label>
+                        MÜŞTERİ ADI SOYADI
+                    </label>
+                    @Html.TextBoxFor(m => m.MUSTERI, new { @class = "form-control", @style = "text-transform:uppercase" })
+                    <label>
+                        ADET
+                    </label>
+                    @Html.TextBoxFor(m => m.ADET, new { @class = "form-control"})
+                    <label>
+                        TUTAR
+                    </label>
+                    @Html.TextBoxFor(m=>m.TUTAR, new {@class="form-control"})
+                    <br/>
+                    <button type="submit" class="btn btn-info">Satış İşlemini Yap</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+

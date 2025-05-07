@@ -1,0 +1,28 @@
+﻿@using MvcOtomasyon.Models.Entity
+@model List<TBLHAREKET>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+<table class="table table-bordered ">
+    <tr>
+        <th>ÜRÜN NUMARASI</th>
+        <th>MÜŞTERİ NUMARASI</th>
+        <th>ADET</th>
+        <th>TUTAR</th>
+    </tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                <th>@ktgr.URUN</th>
+                <th>@ktgr.MUSTERI</th>
+                <th>@ktgr.ADET</th>
+                <th>@ktgr.TUTAR</th>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

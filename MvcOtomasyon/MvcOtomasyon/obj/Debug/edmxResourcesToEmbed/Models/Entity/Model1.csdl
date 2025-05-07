@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SatisVTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBLHARCAMA">
+    <Key>
+      <PropertyRef Name="HARCAMAID" />
+    </Key>
+    <Property Name="HARCAMAID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MUSTERIID" Type="Int32" Nullable="false" />
+    <Property Name="HARCAMATUTAR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="HARCAMATARIH" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="TBLMUSTERI" Relationship="Self.FK__TBLHARCAM__MUSTE__18EBB532" FromRole="TBLHARCAMA" ToRole="TBLMUSTERI" />
+  </EntityType>
+  <EntityType Name="TBLHAREKET">
+    <Key>
+      <PropertyRef Name="HAREKETID" />
+    </Key>
+    <Property Name="HAREKETID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUN" Type="Int32" />
+    <Property Name="MUSTERI" Type="Int32" />
+    <Property Name="PERSONEL" Type="Int16" />
+    <Property Name="ADET" Type="Int32" />
+    <Property Name="TUTAR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TARIH" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="TBLMUSTERI" Relationship="Self.FK_TBLHAREKET_TBLMUSTERI" FromRole="TBLHAREKET" ToRole="TBLMUSTERI" />
+    <NavigationProperty Name="TBLPERSONEL" Relationship="Self.FK_TBLHAREKET_TBLPERSONEL" FromRole="TBLHAREKET" ToRole="TBLPERSONEL" />
+    <NavigationProperty Name="TBLURUNLER" Relationship="Self.FK_TBLHAREKET_TBLURUNLER" FromRole="TBLHAREKET" ToRole="TBLURUNLER" />
+  </EntityType>
+  <EntityType Name="TBLKATEGORI">
+    <Key>
+      <PropertyRef Name="KATEGORIID" />
+    </Key>
+    <Property Name="KATEGORIID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KATEGORIAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLURUNLER" Relationship="Self.FK_TBLURUNLER_TBLKATEGORI" FromRole="TBLKATEGORI" ToRole="TBLURUNLER" />
+  </EntityType>
+  <EntityType Name="TBLMUSTERI">
+    <Key>
+      <PropertyRef Name="MUSTERIID" />
+    </Key>
+    <Property Name="MUSTERIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MUSTERIAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MUSTERSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MUSTERISEHIR" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="MUSTERIBAKIYE" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="TBLHARCAMA" Relationship="Self.FK__TBLHARCAM__MUSTE__18EBB532" FromRole="TBLMUSTERI" ToRole="TBLHARCAMA" />
+    <NavigationProperty Name="TBLHAREKET" Relationship="Self.FK_TBLHAREKET_TBLMUSTERI" FromRole="TBLMUSTERI" ToRole="TBLHAREKET" />
+  </EntityType>
+  <EntityType Name="TBLPERSONEL">
+    <Key>
+      <PropertyRef Name="PERSONELID" />
+    </Key>
+    <Property Name="PERSONELID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PERSONELADSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PERSONELMAAS" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="TBLHAREKET" Relationship="Self.FK_TBLHAREKET_TBLPERSONEL" FromRole="TBLPERSONEL" ToRole="TBLHAREKET" />
+  </EntityType>
+  <EntityType Name="TBLSEHIRLER">
+    <Key>
+      <PropertyRef Name="PLAKA" />
+    </Key>
+    <Property Name="PLAKA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SEHIRAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBLURUNLER">
+    <Key>
+      <PropertyRef Name="URUNID" />
+    </Key>
+    <Property Name="URUNID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUNAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="URUNMARKA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KATEGORI" Type="Byte" />
+    <Property Name="URUNALISFIYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="URUNSATISFIYAT" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="URUNSTOK" Type="Int16" />
+    <Property Name="URUNDURUM" Type="Boolean" />
+    <NavigationProperty Name="TBLHAREKET" Relationship="Self.FK_TBLHAREKET_TBLURUNLER" FromRole="TBLURUNLER" ToRole="TBLHAREKET" />
+    <NavigationProperty Name="TBLKATEGORI" Relationship="Self.FK_TBLURUNLER_TBLKATEGORI" FromRole="TBLURUNLER" ToRole="TBLKATEGORI" />
+  </EntityType>
+  <Association Name="FK__TBLHARCAM__MUSTE__18EBB532">
+    <End Role="TBLMUSTERI" Type="Self.TBLMUSTERI" Multiplicity="1" />
+    <End Role="TBLHARCAMA" Type="Self.TBLHARCAMA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMUSTERI">
+        <PropertyRef Name="MUSTERIID" />
+      </Principal>
+      <Dependent Role="TBLHARCAMA">
+        <PropertyRef Name="MUSTERIID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLHAREKET_TBLMUSTERI">
+    <End Role="TBLMUSTERI" Type="Self.TBLMUSTERI" Multiplicity="0..1" />
+    <End Role="TBLHAREKET" Type="Self.TBLHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMUSTERI">
+        <PropertyRef Name="MUSTERIID" />
+      </Principal>
+      <Dependent Role="TBLHAREKET">
+        <PropertyRef Name="MUSTERI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLHAREKET_TBLPERSONEL">
+    <End Role="TBLPERSONEL" Type="Self.TBLPERSONEL" Multiplicity="0..1" />
+    <End Role="TBLHAREKET" Type="Self.TBLHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLPERSONEL">
+        <PropertyRef Name="PERSONELID" />
+      </Principal>
+      <Dependent Role="TBLHAREKET">
+        <PropertyRef Name="PERSONEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLHAREKET_TBLURUNLER">
+    <End Role="TBLURUNLER" Type="Self.TBLURUNLER" Multiplicity="0..1" />
+    <End Role="TBLHAREKET" Type="Self.TBLHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLURUNLER">
+        <PropertyRef Name="URUNID" />
+      </Principal>
+      <Dependent Role="TBLHAREKET">
+        <PropertyRef Name="URUN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLURUNLER_TBLKATEGORI">
+    <End Role="TBLKATEGORI" Type="Self.TBLKATEGORI" Multiplicity="0..1" />
+    <End Role="TBLURUNLER" Type="Self.TBLURUNLER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLKATEGORI">
+        <PropertyRef Name="KATEGORIID" />
+      </Principal>
+      <Dependent Role="TBLURUNLER">
+        <PropertyRef Name="KATEGORI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SatisVTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="TBLHARCAMA" EntityType="Self.TBLHARCAMA" />
+    <EntitySet Name="TBLHAREKET" EntityType="Self.TBLHAREKET" />
+    <EntitySet Name="TBLKATEGORI" EntityType="Self.TBLKATEGORI" />
+    <EntitySet Name="TBLMUSTERI" EntityType="Self.TBLMUSTERI" />
+    <EntitySet Name="TBLPERSONEL" EntityType="Self.TBLPERSONEL" />
+    <EntitySet Name="TBLSEHIRLER" EntityType="Self.TBLSEHIRLER" />
+    <EntitySet Name="TBLURUNLER" EntityType="Self.TBLURUNLER" />
+    <AssociationSet Name="FK__TBLHARCAM__MUSTE__18EBB532" Association="Self.FK__TBLHARCAM__MUSTE__18EBB532">
+      <End Role="TBLMUSTERI" EntitySet="TBLMUSTERI" />
+      <End Role="TBLHARCAMA" EntitySet="TBLHARCAMA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLHAREKET_TBLMUSTERI" Association="Self.FK_TBLHAREKET_TBLMUSTERI">
+      <End Role="TBLMUSTERI" EntitySet="TBLMUSTERI" />
+      <End Role="TBLHAREKET" EntitySet="TBLHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLHAREKET_TBLPERSONEL" Association="Self.FK_TBLHAREKET_TBLPERSONEL">
+      <End Role="TBLPERSONEL" EntitySet="TBLPERSONEL" />
+      <End Role="TBLHAREKET" EntitySet="TBLHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLHAREKET_TBLURUNLER" Association="Self.FK_TBLHAREKET_TBLURUNLER">
+      <End Role="TBLURUNLER" EntitySet="TBLURUNLER" />
+      <End Role="TBLHAREKET" EntitySet="TBLHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLURUNLER_TBLKATEGORI" Association="Self.FK_TBLURUNLER_TBLKATEGORI">
+      <End Role="TBLKATEGORI" EntitySet="TBLKATEGORI" />
+      <End Role="TBLURUNLER" EntitySet="TBLURUNLER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

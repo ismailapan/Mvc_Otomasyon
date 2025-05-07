@@ -1,0 +1,29 @@
+﻿@model MvcOtomasyon.Models.Entity.TBLMUSTERI
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Müşteri Adı</label>
+        @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control", @style = "text-transform:uppercase" })
+        @Html.ValidationMessageFor(m => m.MUSTERIAD, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Müşteri Soyadı</label>
+        @Html.TextBoxFor(m => m.MUSTERSOYAD, new { @class = "form-control", @style = "text-transform:uppercase" })
+        @Html.ValidationMessageFor(m => m.MUSTERSOYAD, "", new { @style = "color:red" })
+    </div>
+    <div>
+        <label>Şehir</label>
+        @Html.TextBoxFor(m => m.MUSTERISEHIR, new { @class = "form-control", @style = "text-transform:uppercase" })
+        @Html.ValidationMessageFor(m => m.MUSTERISEHIR, "", new { @style = "color:red" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary">Müşteri Ekle</button>
+    </div>
+
+</form>
+
+

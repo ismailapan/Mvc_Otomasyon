@@ -1,0 +1,42 @@
+﻿@using MvcOtomasyon.Models.Entity
+@model List<TBLMUSTERI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Musteriler", FormMethod.Get))
+            {
+                <p>
+                    <b>Aranacak Müşteri Adı:</b> @Html.TextBox("p")
+                    <input type="submit" value="Ara" />
+                </p>
+            }
+
+<table class="table table-bordered ">
+    <tr>
+        <th>Müşteri Numarası</th>
+        <th>Müşteri Adı</th>
+        <th>Müşteri Soyadı</th>
+        <th>Şehir</th>
+    </tr>
+    <tbody>
+        @foreach (var musteri in Model)
+        {
+            <tr>
+                <th>@musteri.MUSTERIID</th>
+                <td>@musteri.MUSTERIAD</td>
+                <td>@musteri.MUSTERSOYAD</td>
+                <td>@musteri.MUSTERISEHIR</td>
+                <td><a href="/MUSTERILER/SIL/@musteri.MUSTERIID" 
+                       class="btn btn-danger"
+                       onclick="return confirm('Bu müşteriyi silmek istediğinize emin misiniz?')"
+                       >SİL</a></td>
+                <td><a href="/MUSTERILER/MusteriGetir/@musteri.MUSTERIID" class="btn btn-success">GÜNCELLE</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/MUSTERILER/YeniMusteri" class="btn btn-primary">Yeni Müşteri Ekle</a>
+

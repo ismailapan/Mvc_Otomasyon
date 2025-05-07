@@ -1,0 +1,25 @@
+﻿@model MvcOtomasyon.Models.Entity.TBLMUSTERI
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle","Musteriler", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(m => m.MUSTERIID)
+                    @Html.TextBoxFor(m => m.MUSTERIID, new { @class = "form-control", @style = "text-transform:uppercase" })
+                    <br />
+                    @Html.LabelFor(m => m.MUSTERIAD)
+                    @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control", @style = "text-transform:uppercase" })
+                    <br />
+                    @Html.LabelFor(m => m.MUSTERSOYAD)
+                    @Html.TextBoxFor(m => m.MUSTERSOYAD, new { @class = "form-control", @style = "text-transform:uppercase" })
+                    <br />
+                    @Html.LabelFor(m => m.MUSTERISEHIR)
+                    @Html.TextBoxFor(m => m.MUSTERISEHIR, new { @class = "form-control", @style = "text-transform:uppercase" })
+                </div>
+                <div>
+                    <button class="btn btn-warning">Güncelle</button>
+                </div>
+            }

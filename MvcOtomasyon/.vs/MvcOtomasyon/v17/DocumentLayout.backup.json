@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MvcOtomasyon\\Views\\Urunler\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\UrunGetir.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MvcOtomasyon\\Views\\Urunler\\UrunGetir.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Yard\u0131m\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MvcOtomasyon\\Views\\Yard\u0131m\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Controllers\\Yard\u0131mController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MvcOtomasyon\\Controllers\\Yard\u0131mController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Controllers\\UrunlerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MvcOtomasyon\\Controllers\\UrunlerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Kategori\\YeniKategori.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MvcOtomasyon\\Views\\Kategori\\YeniKategori.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\YeniUrun.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MvcOtomasyon\\Views\\Urunler\\YeniUrun.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 84,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UrunGetir.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\UrunGetir.cshtml",
+              "RelativeDocumentMoniker": "MvcOtomasyon\\Views\\Urunler\\UrunGetir.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\UrunGetir.cshtml",
+              "RelativeToolTip": "MvcOtomasyon\\Views\\Urunler\\UrunGetir.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T13:01:08.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Yard\u0131m\\Index.cshtml",
+              "RelativeDocumentMoniker": "MvcOtomasyon\\Views\\Yard\u0131m\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Yard\u0131m\\Index.cshtml",
+              "RelativeToolTip": "MvcOtomasyon\\Views\\Yard\u0131m\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-31T12:15:15.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Yard\u0131mController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Controllers\\Yard\u0131mController.cs",
+              "RelativeDocumentMoniker": "MvcOtomasyon\\Controllers\\Yard\u0131mController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Controllers\\Yard\u0131mController.cs",
+              "RelativeToolTip": "MvcOtomasyon\\Controllers\\Yard\u0131mController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T12:14:23.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UrunlerController.cs",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Controllers\\UrunlerController.cs",
+              "RelativeDocumentMoniker": "MvcOtomasyon\\Controllers\\UrunlerController.cs",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Controllers\\UrunlerController.cs",
+              "RelativeToolTip": "MvcOtomasyon\\Controllers\\UrunlerController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-27T17:40:37.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\Index.cshtml",
+              "RelativeDocumentMoniker": "MvcOtomasyon\\Views\\Urunler\\Index.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\Index.cshtml",
+              "RelativeToolTip": "MvcOtomasyon\\Views\\Urunler\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T17:44:08.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "YeniKategori.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Kategori\\YeniKategori.cshtml",
+              "RelativeDocumentMoniker": "MvcOtomasyon\\Views\\Kategori\\YeniKategori.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Kategori\\YeniKategori.cshtml",
+              "RelativeToolTip": "MvcOtomasyon\\Views\\Kategori\\YeniKategori.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T14:27:16.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "YeniUrun.cshtml",
+              "DocumentMoniker": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\YeniUrun.cshtml",
+              "RelativeDocumentMoniker": "MvcOtomasyon\\Views\\Urunler\\YeniUrun.cshtml",
+              "ToolTip": "C:\\Users\\DELL\\Desktop\\UdemyProjeler\\UdemyProjeler\\myApp1\\MvcOtomasyon\\MvcOtomasyon\\Views\\Urunler\\YeniUrun.cshtml",
+              "RelativeToolTip": "MvcOtomasyon\\Views\\Urunler\\YeniUrun.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAACNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-27T17:40:27.108Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

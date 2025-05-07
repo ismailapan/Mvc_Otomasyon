@@ -1,0 +1,26 @@
+﻿@using MvcOtomasyon.Models.Entity
+@model List<TBLKATEGORI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>KATEGORİ NUMARASI</th>
+        <th>KATEGORİ ADI</th>
+    </tr>
+    <tbody>
+        @foreach(var ktgr in Model)
+            {
+                <tr>
+                    <th>@ktgr.KATEGORIID</th>
+                    <td>@ktgr.KATEGORIAD</td>
+                    <td><a href="/KATEGORI/SIL/@ktgr.KATEGORIID" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/KATEGORI/KategoriGetir/@ktgr.KATEGORIID" class="btn btn-success">GÜNCELLE</a></td>
+                </tr>
+            }
+     </tbody>   
+</table>
+<a href="/KATEGORI/YeniKategori" class="btn btn-primary">Yeni Kategori Ekle</a>
+

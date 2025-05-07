@@ -1,0 +1,41 @@
+﻿@model MvcOtomasyon.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Kategori", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Ürün Numarası</label>
+        @Html.TextBoxFor(m => m.URUNID, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Ürün Adı</label>
+        @Html.TextBoxFor(m => m.URUNAD, new { @class = "form-control", @style = "text-transform:uppercase" })
+    </div>
+    <div class="form-group">
+        <label>Markası</label>
+        @Html.TextBoxFor(m => m.URUNMARKA, new { @class = "form-control", @style = "text-transform:uppercase" })
+    </div>
+    <div class="form-group">
+        <label>Kategorisi</label>
+        @Html.DropDownListFor(m=>m.TBLKATEGORI.KATEGORIID,(List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Alış Fiyatı</label>
+        @Html.TextBoxFor(m => m.URUNALISFIYAT, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+        <label>Satış Fıyatı</label>
+        @Html.TextBoxFor(m => m.URUNSATISFIYAT, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Stok Sayısı</label>
+        @Html.TextBoxFor(m => m.URUNSTOK, new { @class = "form-control"})
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-warning ">Güncelle</button>
+    </div>
+}
+

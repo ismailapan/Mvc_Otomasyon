@@ -1,0 +1,40 @@
+﻿@using MvcOtomasyon.Models.Entity
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<TBLURUNLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Markası</th>
+        <th>Kategorisi</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyat</th>
+        <th>Stok Sayısı</th>
+    </tr> 
+    <tbody>
+        @foreach(var urun in Model)
+            {
+               <tr>
+                   <td>@urun.URUNAD</td>
+                   <td>@urun.URUNMARKA</td>
+                   <td>@urun.TBLKATEGORI.KATEGORIAD</td>
+                   <td>@urun.URUNALISFIYAT</td>
+                   <td>@urun.URUNSATISFIYAT</td>
+                   <td>@urun.URUNSTOK</td>
+                   <td><a href="/URUNLER/SIL/@urun.URUNID" class="btn btn-danger">SİL</a></td>
+                   <td><a href="/URUNLER/UrunGetir/@urun.URUNID" class="btn btn-success">GÜNCELLE</a></td>
+               </tr>
+            }
+    </tbody>
+    </table>
+     @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }));
+
+<a href="/URUNLER/YeniUrun" class="btn btn-primary">Yeni Ürün Ekle</a>
+
+
+

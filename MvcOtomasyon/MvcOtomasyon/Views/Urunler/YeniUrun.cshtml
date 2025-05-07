@@ -1,0 +1,35 @@
+﻿@model MvcOtomasyon.Models.Entity.TBLURUNLER
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_Mainlayout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" name="URUNAD" style="text-transform: uppercase" placeholder="Ürün Adını Yazınız.." required="" maxlength="50" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Markası</label>
+        <input type="text" class="form-control" name="URUNMARKA" style="text-transform: uppercase" placeholder="Ürün Markasını Yazınız.." required="" maxlength="50"/>
+    </div>
+    <div style="margin-top:15px">
+        <label>Kategori Seçiniz</label>
+        @Html.DropDownListFor(m => m.TBLKATEGORI.KATEGORIID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Alış Fiyatı</label>
+        <input type="number" class="form-control" name="URUNALISFIYAT" required="" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Satış Fiyatı</label>
+        <input type="number" class="form-control" name="URUNSATISFIYAT" required="" />
+    </div>
+    <div style="margin-top:15px">
+        <label>Stok Sayısı</label>
+        <input type="number" class="form-control" name="URUNSTOK" required="" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-primary">Ürünü Ekle</button>
+    </div>
+</form>
